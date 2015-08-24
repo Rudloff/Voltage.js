@@ -24,6 +24,12 @@ var Voltage = (function () {
         },
         getDischargingTime: function (callback) {
             getBatteryInfo(callback, 'dischargingTime');
+        },
+        hasBattery: function () {
+            if (navigator.getBattery || navigator.battery) {
+                return true;
+            }
+            return false;
         }
     };
 }());
