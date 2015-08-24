@@ -1,6 +1,9 @@
+/*jslint browser: true*/
+/*global Voltage*/
 window.addEventListener(
     'load',
     function () {
+        'use strict';
         if (Voltage.hasBattery()) {
             document.getElementById('charging-text').textContent = 'Charging';
             Voltage.getLevel(
@@ -11,8 +14,7 @@ window.addEventListener(
             );
             Voltage.isCharging(
                 function (charging) {
-                    var element = document.getElementById('charging'),
-                        textElement = document.getElementById('charging-text');
+                    var element = document.getElementById('charging');
                     if (charging) {
                         element.style.display = 'block';
                     } else {
