@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Voltage.js demo</title>
+        <script src="bower_components/gaia-icons/gaia-icons.js"></script>
+        <script src="../Voltage.js"></script>
+        <script src="demo.js"></script>
+        <style>
+            html,
+            body {
+                text-align: center;
+                display: table;
+                vertical-align:middle;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+            
+            .wrapper {
+                display: table-cell;
+                vertical-align:middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <i id="icon-level" aria-hidden="true"></i>
+            <div id="level"></div>
+            <br/>
+            <div id="charging">
+                <i data-icon="battery-charging" aria-hidden="true"></i>
+                <div id="charging-text"></div>
+            </div>
+        </div>
+        <noscript>This demo requires JavaScript, sorry.</noscript>
+    </body>
+</html>
