@@ -7,6 +7,9 @@ module.exports = function (grunt) {
                 Voltage: {
                     src: ['Voltage.js']
                 },
+                demo: {
+                    src: ['demo/demo.js']
+                },
                 Gruntfile: {
                     src: ['Gruntfile.js']
                 }
