@@ -9,7 +9,7 @@ window.addEventListener(
             Voltage.getLevel(
                 function (level) {
                     document.getElementById('icon-level').dataset.icon = 'battery-' + Math.round(level * 10);
-                    document.getElementById('level').textContent = (level * 100) + ' %';
+                    document.getElementById('level').textContent = Math.round(level * 100) + ' %';
                 }
             );
             Voltage.isCharging(
