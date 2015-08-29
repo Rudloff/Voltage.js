@@ -1,0 +1,7 @@
+{
+  "name": "Voltage.js",
+  "devDependencies": {
+    "qunit": "~1.18.0"
+  },
+  "version": "0.1.1"
+}
