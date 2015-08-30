@@ -2,5 +2,24 @@
     "name": "Voltage.js",
     "devDependencies": {
         "qunit": "~1.18.0"
+    },
+    "main": "Voltage.js",
+    "ignore": [
+        "demo/",
+        "tests/"
+    ],
+    "description": "Small library providing information about the device's battery status",
+    "moduleType": "globals",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Pierre Rudloff",
+            "email": "contact@rudloff.pro",
+            "homepage": "https://www.rudloff.pro/"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Rudloff/Voltage.js.git"
     }
 }
