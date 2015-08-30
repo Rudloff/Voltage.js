@@ -10,6 +10,21 @@ var Voltage = (function () {
             );
         } else if (navigator.battery) {
             callback(navigator.battery[info]);
+        } else {
+            var result;
+            switch (info) {
+            case 'level':
+                result = 1;
+                break;
+            case 'charging':
+                result = false;
+                break;
+            case 'chargingTime':
+            case 'dischargingTime':
+                result = 0;
+                break;
+            }
+            callback(result);
         }
     }
     return {

@@ -3,7 +3,7 @@ QUnit.test(
     'hasBattery',
     function (assert) {
         'use strict';
-        assert.ok(Voltage.hasBattery());
+        assert.equal('boolean', typeof Voltage.hasBattery());
     }
 );
 
