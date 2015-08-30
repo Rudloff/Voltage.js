@@ -4,7 +4,8 @@
     "dependencies": {
         "grunt": "~0.4.5",
         "grunt-cli": "~0.1.13",
-        "grunt-jslint": "~1.1.14"
+        "grunt-jslint": "~1.1.14",
+        "grunt-contrib-qunit": "~0.7.0"
     },
     "repository": {
         "type": "git",

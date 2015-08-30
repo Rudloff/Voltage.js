@@ -16,11 +16,16 @@ module.exports = function (grunt) {
                 Gruntfile: {
                     src: ['Gruntfile.js']
                 }
+            },
+            qunit: {
+                files: ['tests/index.html']
             }
         }
     );
 
     grunt.loadNpmTasks('grunt-jslint');
+    grunt.loadNpmTasks('grunt-contrib-qunit');
 
     grunt.registerTask('lint', 'jslint');
+    grunt.registerTask('test', 'qunit');
 };
