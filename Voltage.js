@@ -10,6 +10,8 @@ var Voltage = (function () {
             );
         } else if (navigator.battery) {
             callback(navigator.battery[info]);
+        } else {
+            callback();
         }
     }
     return {
