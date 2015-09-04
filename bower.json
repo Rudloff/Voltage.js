@@ -1,7 +1,8 @@
 {
     "name": "Voltage.js",
     "devDependencies": {
-        "qunit": "~1.19.0"
+        "qunit": "~1.19.0",
+        "blanket": "~1.1.7"
     },
     "main": "Voltage.js",
     "ignore": [
