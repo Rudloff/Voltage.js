@@ -7,7 +7,7 @@ var Voltage = (function () {
                 callback(battery[info]);
             });
         } catch (e) {
-            throw("Can't get battery manager");
+            throw ("Can't get battery manager");
         }
     }
     return {
@@ -44,7 +44,7 @@ var Voltage = (function () {
             } else if (navigator.battery) {
                 callback(navigator.battery);
             } else {
-                throw('Battery API unavailable');
+                throw ('Battery API unavailable');
             }
         }
     };

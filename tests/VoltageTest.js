@@ -4,7 +4,8 @@ QUnit.test(
     function (assert) {
         'use strict';
         this.stub(
-            Voltage, 'getBatteryManager',
+            Voltage,
+            'getBatteryManager',
             function (callback) {
                 callback();
             }
@@ -24,7 +25,8 @@ QUnit.test(
     function (assert) {
         'use strict';
         this.stub(
-            Voltage, 'getBatteryManager'
+            Voltage,
+            'getBatteryManager'
         ).throws();
         var done = assert.async();
         Voltage.hasBattery(
@@ -41,7 +43,8 @@ QUnit.test(
     function (assert) {
         'use strict';
         this.stub(
-            Voltage, 'getBatteryManager',
+            Voltage,
+            'getBatteryManager',
             function (callback) {
                 callback({ level: 100 });
             }
@@ -61,7 +64,8 @@ QUnit.test(
     function (assert) {
         'use strict';
         this.stub(
-            Voltage, 'getBatteryManager'
+            Voltage,
+            'getBatteryManager'
         ).throws();
         assert.throws(Voltage.getLevel, "Can't get battery manager", '');
     }
@@ -73,7 +77,8 @@ QUnit.test(
     function (assert) {
         'use strict';
         this.stub(
-            Voltage, 'getBatteryManager',
+            Voltage,
+            'getBatteryManager',
             function (callback) {
                 callback({ chargingTime: 0 });
             }
@@ -93,7 +98,8 @@ QUnit.test(
     function (assert) {
         'use strict';
         this.stub(
-            Voltage, 'getBatteryManager',
+            Voltage,
+            'getBatteryManager',
             function (callback) {
                 callback({ dischargingTime: 0 });
             }
@@ -113,7 +119,8 @@ QUnit.test(
     function (assert) {
         'use strict';
         this.stub(
-            Voltage, 'getBatteryManager',
+            Voltage,
+            'getBatteryManager',
             function (callback) {
                 callback({ charging: false });
             }
