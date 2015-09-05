@@ -63,7 +63,7 @@ QUnit.test(
         this.stub(
             Voltage, 'getBatteryManager'
         ).throws();
-        assert.throws(Voltage.getLevel());
+        assert.throws(Voltage.getLevel, "Can't get battery manager", '');
     }
 );
 
