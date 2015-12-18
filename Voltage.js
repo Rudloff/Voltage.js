@@ -2,29 +2,12 @@
 var Voltage = (function () {
     'use strict';
     function getBatteryInfo(callback, info) {
-        if (navigator.getBattery) {
-            navigator.getBattery().then(
-                function (battery) {
-                    callback(battery[info]);
-                }
-            );
-        } else if (navigator.battery) {
-            callback(navigator.battery[info]);
-        } else {
-            var result;
-            switch (info) {
-            case 'level':
-                result = 1;
-                break;
-            case 'charging':
-                result = false;
-                break;
-            case 'chargingTime':
-            case 'dischargingTime':
-                result = 0;
-                break;
-            }
-            callback(result);
+        try {
+            Voltage.getBatteryManager(function (battery) {
+                callback(battery[info]);
+            });
+        } catch (e) {
+            throw ("Can't get battery manager");
         }
     }
     return {
@@ -40,11 +23,29 @@ var Voltage = (function () {
         getDischargingTime: function (callback) {
             getBatteryInfo(callback, 'dischargingTime');
         },
-        hasBattery: function () {
-            if (navigator.getBattery || navigator.battery) {
-                return true;
+        hasBattery: function (callback) {
+            try {
+                Voltage.getBatteryManager(
+                    function () {
+                        callback(true);
+                    }
+                );
+            } catch (e) {
+                callback(false);
             }
-            return false;
+        },
+        getBatteryManager: function (callback) {
+            if (navigator.getBattery) {
+                navigator.getBattery().then(
+                    function (battery) {
+                        callback(battery);
+                    }
+                );
+            } else if (navigator.battery) {
+                callback(navigator.battery);
+            } else {
+                throw ('Battery API unavailable');
+            }
         }
     };
 }());
