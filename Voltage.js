@@ -1,4 +1,5 @@
 /*jslint browser: true*/
+/*global navigator*/
 var Voltage = (function () {
     'use strict';
     function getBatteryInfo(callback, info) {
